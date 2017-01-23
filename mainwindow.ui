@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>396</width>
+    <height>488</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Gamepad Launcher</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="res.qrc">
+    <normaloff>:/icon.png</normaloff>:/icon.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QListView" name="listView">
+      <property name="dragEnabled">
+       <bool>true</bool>
+      </property>
+      <property name="dragDropMode">
+       <enum>QAbstractItemView::InternalMove</enum>
+      </property>
+      <property name="movement">
+       <enum>QListView::Snap</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>BottomToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionAdd_Game"/>
+   <addaction name="actionRemove_Game"/>
+   <addaction name="actionPlay_Game"/>
+   <addaction name="actionHide_to_tray"/>
+   <addaction name="separator"/>
+   <addaction name="actionNavigate"/>
+  </widget>
+  <action name="actionAdd_Game">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/add.png</normaloff>:/add.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Game</string>
+   </property>
+  </action>
+  <action name="actionRemove_Game">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/remove.png</normaloff>:/remove.png</iconset>
+   </property>
+   <property name="text">
+    <string>Remove Game</string>
+   </property>
+  </action>
+  <action name="actionPlay_Game">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/a.png</normaloff>:/a.png</iconset>
+   </property>
+   <property name="text">
+    <string>Play Game</string>
+   </property>
+  </action>
+  <action name="actionHide_to_tray">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/start.png</normaloff>:/start.png</iconset>
+   </property>
+   <property name="text">
+    <string>Show/hide</string>
+   </property>
+  </action>
+  <action name="actionNavigate">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <disabledoff>:/dpad.png</disabledoff>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Navigate</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>add.png</file>
+        <file>desktop.png</file>
+        <file>remove.png</file>
+        <file>start.png</file>
+        <file>icon.png</file>
+        <file>no-icon.png</file>
+        <file>a.png</file>
+        <file>dpad.png</file>
+        <file>ls.png</file>
+        <file>play.png</file>
+    </qresource>
+</RCC>
