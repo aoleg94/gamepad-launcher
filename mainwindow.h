@@ -26,10 +26,10 @@ private slots:
     void on_actionRemove_Game_triggered();
     void on_actionPlay_Game_triggered();
     void on_actionHide_to_tray_triggered();
-
     void launchApp(const AppItem& i);
-
     void appClosed(int exitCode, QProcess::ExitStatus exitStatus);
+    void show();
+    void hide();
 
 private:
     Ui::MainWindow *ui;

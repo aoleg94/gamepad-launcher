@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     a.setApplicationName("Gamepad Launcher");
     MainWindow w;
-    w.show();
+    //w.show();
 
     return a.exec();
 }

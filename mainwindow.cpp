@@ -155,6 +155,19 @@ void MainWindow::appClosed(int exitCode, QProcess::ExitStatus exitStatus)
     show();
 }
 
+void MainWindow::show()
+{
+    setWindowState(Qt::WindowNoState);
+    QWidget::showNormal();
+    activateWindow();
+    raise();
+}
+
+void MainWindow::hide()
+{
+    QWidget::hide();
+}
+
 void MainWindow::changeEvent(QEvent *e)
 {
     switch (e->type())
@@ -163,9 +176,11 @@ void MainWindow::changeEvent(QEvent *e)
             ui->retranslateUi(this);
             break;
         case QEvent::WindowStateChange:
-            if (windowState() & Qt::WindowMinimized)
-                QTimer::singleShot(0, this, SLOT(hide()));
-            break;
+        if (windowState() & Qt::WindowMinimized)
+        {
+            QTimer::singleShot(0, this, SLOT(hide()));
+            return;
+        }
         default:
             break;
     }
