@@ -36,3 +36,5 @@ RESOURCES += \
     res.qrc
 
 LIBS += -static
+
+RC_FILE = app.rc
