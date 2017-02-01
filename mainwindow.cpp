@@ -58,7 +58,8 @@ void MainWindow::slotButtonPressEvent(int device, QGamepadManager::GamepadButton
         idx = ui->listView->model()->index(idx.row()-1, idx.column());
         break;
     case QGamepadManager::ButtonA:
-        on_actionPlay_Game_triggered();
+        if(isVisible())
+            on_actionPlay_Game_triggered();
         return;
     case QGamepadManager::ButtonGuide:
     case QGamepadManager::ButtonStart:
@@ -69,9 +70,12 @@ void MainWindow::slotButtonPressEvent(int device, QGamepadManager::GamepadButton
     default:
         return;
     }
-    if(!idx.isValid())
-        idx = ui->listView->model()->index(0, 0);
-    ui->listView->selectionModel()->setCurrentIndex(idx, QItemSelectionModel::ClearAndSelect | QItemSelectionModel::Current);
+    if(isVisible())
+    {
+        if(!idx.isValid())
+            idx = ui->listView->model()->index(0, 0);
+        ui->listView->selectionModel()->setCurrentIndex(idx, QItemSelectionModel::ClearAndSelect | QItemSelectionModel::Current);
+    }
 }
 
 void MainWindow::on_actionAdd_Game_triggered()
